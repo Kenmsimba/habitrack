@@ -5,7 +5,7 @@
     <nav class="bg-white border-b shadow-sm">
       <div class="container mx-auto px-4">
         <div class="flex justify-between items-center py-3">
-          <Link href="/" class="text-xl font-bold text-blue-600">HabitTrack</Link>
+          <Link href="/" class="text-xl font-bold text-blue-600">Afrihomes</Link>
           <div class="flex gap-4">
             <Link
               href="/"
@@ -37,7 +37,7 @@
     <!-- 3. FOOTER -->
     <footer class="bg-gray-950 text-gray-300 border-t py-6">
       <div class="container mx-auto px-4 text-center text-sm">
-        <p class="mb-3 text-gray-300">© 2025 HabitTrack. All rights reserved.</p>
+        <p class="mb-3 text-gray-300">© 2025 Afrihomes. All rights reserved.</p>
         <div class="flex justify-center gap-4">
           <Link href="/privacy" class="text-gray-400 hover:text-white transition-colors">Privacy</Link>
           <Link href="/terms" class="text-gray-400 hover:text-white transition-colors">Terms</Link>
