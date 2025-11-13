@@ -75,7 +75,8 @@
                 </a> 
             </div>
             <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-                <img src="https://images.pexels.com/photos/32473244/pexels-photo-32473244.png" alt="mockup">
+               <!-- //to be changed to local hosting  -->
+              <img src="https://images.pexels.com/photos/32473244/pexels-photo-32473244.png" alt="mockup"> 
             </div>                
         </div>
     </section>
