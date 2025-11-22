@@ -39,6 +39,7 @@
       <div class="container mx-auto px-4 text-center text-sm">
         <p class="mb-3 text-gray-300">© 2025 Afrihomes. All rights reserved.</p>
         <div class="flex justify-center gap-4">
+          <!-- To be changed  -->
           <Link href="/privacy" class="text-gray-400 hover:text-white transition-colors">Privacy</Link>
           <Link href="/terms" class="text-gray-400 hover:text-white transition-colors">Terms</Link>
           <Link href="/contact" class="text-gray-400 hover:text-white transition-colors">Support</Link>
