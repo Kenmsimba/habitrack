@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use Tighten\Ziggy\Ziggy;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 
@@ -35,9 +36,10 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request): array
     {
-        return [
-            ...parent::share($request),
-            //
-        ];
+        return array_merge(parent::share($request), [
+            'ziggy' => array_merge((new Ziggy)->toArray(), [
+                'location' => $request->url(),
+            ]),
+        ]);
     }
 }

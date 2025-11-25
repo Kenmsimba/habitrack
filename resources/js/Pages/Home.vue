@@ -44,15 +44,22 @@
             <h2 class="text-gray-200 font-extrabold text-3xl xs:text-4xl md:text-5xl leading-tight" style="color:white;">
               Get <span class="text-white">Fast, Easy, and Stress-Free</span> 
             </h2>
+            <a :href="route('contact')">
+            <p>Test</p>
+            </a>
             <div class="inline-flex flex-wrap justify-center gap-3">
               <!-- <button class="p-2 my-5 bg-indigo-700 hover:bg-indigo-800 font-bold text-white rounded border-2 border-transparent hover:border-indigo-800 shadow-md transition duration-500 md:text-xl">
                 Hire US!
               </button> -->
-              <a href="/contact">
+              <a href="/landlord/apartments">
                 <button class="p-2 my-5 bg-transparent border-2 bg-indigo-200 bg-opacity-75 hover:bg-opacity-100 border-indigo-700 rounded hover:border-indigo-800 font-bold text-indigo-800 shadow-md transition duration-500 md:text-lg" style="background-color:white;">
                   Sign Up as
                 </button>
               </a>
+              
+              <!-- <Link :href="route('contact')" class="text-blue-600 underline">
+                Go to Contact (Inertia)
+              </Link> -->
             </div>
           </div>
         </div>
