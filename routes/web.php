@@ -11,9 +11,9 @@ use Inertia\Inertia;
 //     return Inertia::render('Home'); //Matches pages/Home.vue
 // });
 
-// Route::get('/', function () {
-//     return Inertia::render('Home');
-// })->name('home');
+Route::get('/', function () {
+    return Inertia::render('Home');
+})->name('home');
 
 Route::get('/about', function () {
     return Inertia::render('About');
@@ -23,13 +23,13 @@ Route::get('/contact', function () {
     return Inertia::render('Contact');
 })->name('contact');
 
-Route::get('/', function () {
-    return Inertia::render('Home', [
-        'auth' => [
-            'user' => auth()->user() ? ['name' => auth()->user()->name] : null
-        ]
-    ]);
-});
+// Route::get('/', function () {
+//     return Inertia::render('Home', [
+//         'auth' => [
+//             'user' => auth()->user() ? ['name' => auth()->user()->name] : null
+//         ]
+//     ])->name('home');
+// });
 
 Route::get('/test', fn() => Inertia::render('Test'));
 

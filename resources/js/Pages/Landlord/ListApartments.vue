@@ -3,12 +3,12 @@
     <div class="p-6">
       <div class="flex justify-between items-center mb-6">
         <h1 class="text-2xl font-bold text-gray-800">My Apartments</h1>
-        <inertia-link
+        <Link
           href="/landlord/apartments/create"
           class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
         >
           + Add Apartment
-        </inertia-link>
+        </Link>
       </div>
 
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -32,6 +32,7 @@
 
 <script setup>
 import { ref } from 'vue';
+import { Link } from '@inertiajs/vue3';
 import LandlordLayout from './components/LandlordLayout.vue';
 import ApartmentCard from './components/ApartmentCard.vue';
 
