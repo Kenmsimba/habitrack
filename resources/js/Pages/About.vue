@@ -2,7 +2,7 @@
   <layout>
     <section class="bg-gray-50 dark:bg-gray-800">
         <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-           <div class="container flex flex-col px-6 py-10 mx-auto space-y-6 lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center">
+            <div class="container flex flex-col px-6 py-10 mx-auto space-y-6 lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center">
             <div class="w-full lg:w-1/2">
                 <div class="lg:max-w-lg">
                     <h1 class="text-3xl font-bold tracking-wide text-gray-800 dark:text-white lg:text-5xl">
@@ -46,17 +46,17 @@
                     </form>
                 </div> -->
             </div>
-    
+
             <div class="flex items-center justify-center w-full h-96 lg:w-1/2">
                 <img class="object-cover w-full h-full mx-auto rounded-md lg:max-w-2xl" src="https://images.pexels.com/photos/8783596/pexels-photo-8783596.jpeg" alt="glasses photo">
             </div>
-        </div>  
+            </div>  
           
-          <div class="max-w-screen-md mb-8 lg:mb-16">
+          <!-- <div class="max-w-screen-md mb-8 lg:mb-16">
                 <h2 class="mb-4 text-4xl font-extrabold text-gray-900 dark:text-white">Homes for Every Lifestyle</h2>
                 <p class="text-gray-500 sm:text-xl dark:text-gray-400">From modern city apartments to peaceful suburban homes, and from affordable bedsitters to luxurious villas, we’ve got something for everyone.</p>
-            </div>
-            <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
+            </div> -->
+            <!-- <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
                 <div>
                     <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-100 lg:h-12 lg:w-12 dark:bg-blue-900">
                         <svg class="w-5 h-5 text-blue-600 lg:w-6 lg:h-6 dark:text-blue-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
@@ -99,6 +99,16 @@
                     <h3 class="mb-2 text-xl font-bold dark:text-white">Save & Share Your Favorites</h3>
                     <p class="text-gray-500 dark:text-gray-400">Create an account to save your favorite listings, track price changes, and share top picks with friends, family, or roommates. Your next home might just be one click away.</p>
                 </div>
+            </div> -->
+
+
+            <!-- about  -->
+             <div class="mt-20 mb-20" style="color:white">
+                <h1>About Afrihomes</h1>
+                <p>Afrihomes makes house-hunting effortless by giving you instant access to all houses available in any location.
+                    Just login, explore the options, choose a house, get the google location, and go view it immediately.
+                    You are connected to the agent or landlord instantly, ensuring a smooth and stress-free experience.
+                </p>
             </div>
         </div>
       </section>
