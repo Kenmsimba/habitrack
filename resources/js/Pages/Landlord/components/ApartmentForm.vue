@@ -184,8 +184,7 @@
       </label>
       <input
         v-model="form.wardrobe"
-        type="radio"
-        value="yes"              
+        type="checkbox"              
         id="wardrobe-yes"
         class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
       />
@@ -197,8 +196,7 @@
       </label>
       <input
         v-model="form.wardrobe"
-        type="radio"
-        value="yes"              
+        type="checkbox"              
         id="wardrobe-yes"
         class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
       />
@@ -210,8 +208,7 @@
       </label>
       <input
         v-model="form.wardrobe"
-        type="radio"
-        value="yes"              
+        type="checkbox"              
         id="wardrobe-yes"
         class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
       />
@@ -223,8 +220,7 @@
       </label>
       <input
         v-model="form.wardrobe"
-        type="radio"
-        value="yes"              
+        type="checkbox"              
         id="wardrobe-yes"
         class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
       />
@@ -247,7 +243,91 @@
     <h1> <strong>Within the building</strong> </h1> 
     <!-- Select  -->
 
-    <h1>Photos & Media </h1>
+    <div class="flex items-center gap-3">
+      <label for="wardrobe-yes" class="text-sm font-medium text-gray-700 cursor-pointer">
+        Parking
+      </label>
+      <input
+        v-model="form.wardrobe"
+        type="checkbox"              
+        id="wardrobe-yes"
+        class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
+      />
+    </div>
+
+    <div class="flex items-center gap-3">
+      <label for="wardrobe-yes" class="text-sm font-medium text-gray-700 cursor-pointer">
+        Security [CCTV, guards, gate]
+      </label>
+      <input
+        v-model="form.wardrobe"
+        type="checkbox"              
+        id="wardrobe-yes"
+        class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
+      />
+    </div>
+
+    <div class="flex items-center gap-3">
+      <label for="wardrobe-yes" class="text-sm font-medium text-gray-700 cursor-pointer">
+        Lift / Elevator
+      </label>
+      <input
+        v-model="form.wardrobe"
+        type="checkbox"              
+        id="wardrobe-yes"
+        class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
+      />
+    </div>
+
+    <div class="flex items-center gap-3">
+      <label for="wardrobe-yes" class="text-sm font-medium text-gray-700 cursor-pointer">
+        Backup Generator
+      </label>
+      <input
+        v-model="form.wardrobe"
+        type="checkbox"              
+        id="wardrobe-yes"
+        class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
+      />
+    </div>
+
+    <div class="flex items-center gap-3">
+      <label for="wardrobe-yes" class="text-sm font-medium text-gray-700 cursor-pointer">
+        Laundry area
+      </label>
+      <input
+        v-model="form.wardrobe"
+        type="checkbox"              
+        id="wardrobe-yes"
+        class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
+      />
+    </div>
+
+    <div class="flex items-center gap-3">
+      <label for="wardrobe-yes" class="text-sm font-medium text-gray-700 cursor-pointer">
+        Pets Allowed
+      </label>
+      <input
+        v-model="form.wardrobe"
+        type="checkbox"            
+        id="wardrobe-yes"
+        class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
+      />
+    </div>
+
+    <div class="flex items-center gap-3">
+      <label for="wardrobe-yes" class="text-sm font-medium text-gray-700 cursor-pointer">
+        Garbage collection services
+      </label>
+      <input
+        v-model="form.wardrobe"
+        type="checkbox"              
+        id="wardrobe-yes"
+        class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
+      />
+    </div>
+    <!-- Photos / Media  -->
+    <h1> <strong>Photos & Media </strong> </h1>
     <!-- file upload  -->
      <div>
       <label for="">Upload clear photos [Living room, bedroom, Kitchen, bathroom, kitchen, bedroom, balcony, exterior]</label>
@@ -266,6 +346,114 @@
       <strong> Availability & Restriction Details </strong>
     </h1>
     <!-- Select  -->
+     <div class="flex items-center gap-3">
+      <label for="wardrobe-yes" class="text-sm font-medium text-gray-700 cursor-pointer">
+        Is the house currently available
+      </label>
+      <input
+        v-model="form.houseAvailable"
+        type="checkbox"              
+        id="wardrobe-yes"
+        class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
+      />
+    </div>
+
+    <div class="flex items-center gap-3">
+      <label for="wardrobe-yes" class="text-sm font-medium text-gray-700 cursor-pointer">
+        Minimum Lease Period
+      </label>
+      <input
+        v-model="form.wardrobe"
+        type="checkbox"              
+        id="wardrobe-yes"
+        class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
+      />
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Any restrictions</label>
+      <input
+        v-model.number="form.restrictions"
+        type="text"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+      />
+    </div>
+
+    <h1>
+      <strong>
+        Landlord / Agent Information
+      </strong>
+    </h1>
+
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Full name</label>
+      <input
+        v-model.number="form.deposit"
+        type="text"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+      />
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Phone number</label>
+      <input
+        v-model.number="form.phoneNumber"
+        type="number"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+      />
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Alternative Phone NUmber</label>
+      <input
+        v-model.number="form.alternativePhoneNumber"
+        type="number"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+      />
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Are you the Landlord/Agent?</label>
+      <input
+        v-model.number="form.landlordAgent"
+        type="text"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+      />
+    </div>
+
+
+    <h1>
+      <strong>
+        Payment Instructions
+      </strong>
+    </h1>
+
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Prefered Payment Method</label>
+      <input
+        v-model.number="form.deposit"
+        type="text"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+      />
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Viewing fee (If any)</label>
+      <input
+        v-model.number="form.deposit"
+        type="number"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+      />
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Viewing Schedule (What time of day you allow viewing)</label>
+      <input
+        v-model.number="form.deposit"
+        type="number"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+      />
+    </div>
 
     <button
       type="submit"
