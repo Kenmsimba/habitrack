@@ -2,34 +2,270 @@
 <template>
   <form @submit.prevent="submit" class="space-y-5 bg-white p-6 rounded-lg shadow">
     <div>
-      <label class="block text-sm font-medium text-gray-700">Title</label>
-      <input
-        v-model="form.title"
+      <label class="block text-sm font-medium text-gray-700">Property Type</label>
+
+      <Select v-model="form.propertyType"
         required
         class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
         placeholder="e.g. Cozy Studio"
-      />
+      >
+        <option value="">Apartment</option>
+        <option value="">Bed Sitter</option>
+        <option value="">Single Room</option>
+        <option value="">1 Bedroom</option>
+        <option value="">2 Bedroom</option>
+        <option value="">3 Bedroom</option>
+        <option value="">4 Bedroom</option>
+        <option value="">BnB</option>
+        <option value="">Studio</option>
+        <option value="">Shop</option>
+        <option value="">Office Space</option>
+      </Select>
     </div>
 
+    <!-- Step 2 -->
+    <h1> <strong>Address & Map Location </strong> </h1>
     <div>
-      <label class="block text-sm font-medium text-gray-700">Address</label>
+      <label class="block text-sm font-medium text-gray-700">County</label>
       <input
-        v-model="form.address"
+        v-model="form.county"
         required
         class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
-        placeholder="123 Main St"
+        placeholder="e.g Nairobi"
       />
     </div>
 
     <div>
-      <label class="block text-sm font-medium text-gray-700">Monthly Rent ($)</label>
+      <label class="block text-sm font-medium text-gray-700">Town/City</label>
       <input
-        v-model.number="form.rent"
+        v-model.number="form.town"
         type="number"
         required
         class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
       />
     </div>
+    
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Street / Road</label>
+      <input
+        v-model.number="form.street"
+        type="number"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+      />
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Exact Map Pin</label>
+      <input
+        v-model.number="form.pin"
+        type="number"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+      />
+    </div>
+
+    <!-- Step 3 -->
+    <h1> <strong>Pricing Information</strong> </h1>
+
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Monthly Rent</label>
+      <input
+        v-model.number="form.rent"
+        type="number"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+      />
+    </div>
+    
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Deposit</label>
+      <input
+        v-model.number="form.deposit"
+        type="number"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+      />
+    </div>
+    
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Service Charge (If any)</label>
+      <input
+        v-model="form.serviceCharge"
+        type="text"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+      />
+    </div>
+    
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Water & Electricity Billing</label>
+      <input
+        v-model.number="form.serviceCharge"
+        type="number"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+      />
+    </div>
+    
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Payment Mode</label>
+      <select
+        v-model.number="form.serviceCharge"
+        type="text"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+      >
+      <option value="prepaid">Prepaid</option>
+      <option value="postpaid">Post Paid</option>
+      </select>
+    </div>
+
+    <!-- Step 4 -->
+    <h1> <strong>House Description</strong> </h1>
+    
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Number of Bathrooms</label>
+      <input
+        v-model.number="form.bathroomNumber"
+        type="number"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+      />
+    </div>
+    
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Type of Bathroom</label>
+      <select
+        v-model="form.bathroomType"
+        type="text"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+      >
+      <option value="">Shared</option>
+      <option value="">Self</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Size in Sqr ft /Sqr mtrs if known</label>
+      <input
+        v-model.number="form.size"
+        type="number"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+      />
+    </div>
+
+
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Balcony Available</label>
+      <select
+        v-model="form.balcony"
+        type="text"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+      >
+      <option value="">Yes</option>
+      <option value="">No</option>
+      </select>
+    </div>
+    
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Kitchen Type</label>
+      <select
+        v-model="form.balcony"
+        type="text"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+      >
+      <option value="">Open Type</option>
+      <option value="">Closed Kitchenette</option>
+      </select>
+    </div>
+
+
+    <!-- Step 5 -->
+     <h1> <strong> Amenities and Features </strong></h1>
+
+     <h3>Inside the House</h3>
+
+     <div class="flex items-center gap-3">
+      <label for="wardrobe-yes" class="text-sm font-medium text-gray-700 cursor-pointer">
+        Wardrobes
+      </label>
+      <input
+        v-model="form.wardrobe"
+        type="radio"
+        value="yes"              
+        id="wardrobe-yes"
+        class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
+      />
+    </div>
+
+     <div class="flex items-center gap-3">
+      <label for="wardrobe-yes" class="text-sm font-medium text-gray-700 cursor-pointer">
+        Hotshower
+      </label>
+      <input
+        v-model="form.wardrobe"
+        type="radio"
+        value="yes"              
+        id="wardrobe-yes"
+        class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
+      />
+    </div>
+     
+    <div class="flex items-center gap-3">
+      <label for="wardrobe-yes" class="text-sm font-medium text-gray-700 cursor-pointer">
+        Tiles
+      </label>
+      <input
+        v-model="form.wardrobe"
+        type="radio"
+        value="yes"              
+        id="wardrobe-yes"
+        class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
+      />
+    </div>
+     
+    <div class="flex items-center gap-3">
+      <label for="wardrobe-yes" class="text-sm font-medium text-gray-700 cursor-pointer">
+        Tiles
+      </label>
+      <input
+        v-model="form.wardrobe"
+        type="radio"
+        value="yes"              
+        id="wardrobe-yes"
+        class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
+      />
+    </div>
+     
+    <div>
+      <label class="block text-sm font-medium text-gray-700"> Water Availability </label>
+      <select
+        v-model="form.wardrobe"
+        type="text"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+      >
+
+      <option value="">24 / 7</option>
+      <option value="">rationed</option>
+      <option value="">Borehole</option>
+      </select>
+    </div>
+
+    <h1> <strong>Within the building</strong> </h1> 
+    <!-- Select  -->
+
+    <h1>Photos & Media </h1>
+    <!-- file upload  -->
+     <div>
+      <label for="">Upload clear photos [Living room, bedroom, Kitchen, bathroom, kitchen, bedroom, balcony, exterior]</label>
+      <br></br>  
+      <input type="file">
+     </div>
+
+     <div>
+      <label for="">Video tour (Optional but highly valuable)</label>
+      <br>
+      <input type="file">
+     </div>
+     
+
+    <h1>
+      <strong> Availability & Restriction Details </strong>
+    </h1>
+    <!-- Select  -->
 
     <button
       type="submit"
