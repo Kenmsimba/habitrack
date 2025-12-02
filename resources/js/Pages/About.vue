@@ -6,10 +6,10 @@
             <div class="w-full lg:w-1/2">
                 <div class="lg:max-w-lg">
                     <h1 class="text-3xl font-bold tracking-wide text-gray-800 dark:text-white lg:text-5xl">
-                        Easiest way to House Hunt
+                        The smart way to House Hunt
                     </h1>
                     
-                    <div class="mt-8 space-y-5">
+                    <!-- <div class="mt-8 space-y-5">
                         <p class="flex items-center -mx-2 text-gray-700 dark:text-gray-200">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -33,8 +33,15 @@
 
                             <span class="mx-2">Easy to Use</span>
                         </p>
-                    </div>
-                </div>
+                    </div> -->
+                
+                <div class="mt-20 mb-20" style="color:white">
+                <h1>About Afrihomes</h1>
+                <p>Afrihomes makes house-hunting effortless by giving you instant access to all houses available in any location.
+                    Just login, explore the options, choose a house, get the google location, and go view it immediately.
+                    You are connected to the agent or landlord instantly, ensuring a smooth and stress-free experience.
+                </p>
+            </div></div>
 
                 <!-- <div class="w-full mt-8 bg-transparent border rounded-md lg:max-w-sm dark:border-gray-700 focus-within:border-blue-400 focus-within:ring focus-within:ring-blue-300 dark:focus-within:border-blue-400 focus-within:ring-opacity-40">
                     <form class="flex flex-col lg:flex-row">
@@ -103,13 +110,7 @@
 
 
             <!-- about  -->
-             <div class="mt-20 mb-20" style="color:white">
-                <h1>About Afrihomes</h1>
-                <p>Afrihomes makes house-hunting effortless by giving you instant access to all houses available in any location.
-                    Just login, explore the options, choose a house, get the google location, and go view it immediately.
-                    You are connected to the agent or landlord instantly, ensuring a smooth and stress-free experience.
-                </p>
-            </div>
+             
         </div>
       </section>
 <!-- 
