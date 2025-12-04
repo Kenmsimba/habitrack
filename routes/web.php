@@ -5,6 +5,8 @@ use App\Models\Unit;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+use App\Http\Controllers\Auth\RegisterController;
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -145,4 +147,17 @@ Route::get('/apartments', function () {
     })->name('apartments.index');
 
     
+});
+
+
+
+// Guests 
+
+Route::middleware('guest')->group(function () {
+    Route::get('/register', [RegisterController::class, 'create'])->name('register');
+    Route::post('/register', [RegisterController::class, 'store']);
+    
+    Route::get('/login', function () {
+        return Inertia::render('Auth/Login');
+    })->name('login');
 });

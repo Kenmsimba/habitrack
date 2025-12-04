@@ -42,7 +42,7 @@
               <span class="text-white">Find Your Perfect Home</span>
             </h1>
             <h2 class="text-gray-200 font-extrabold text-3xl xs:text-4xl md:text-5xl leading-tight" style="color:white;">
-              Get <span class="text-white">Fast, Easy, and Stress-Free</span> 
+              Get <span cla ss="text-white">Fast, Easy, and Stress-Free</span> 
             </h2>
             <div class="inline-flex flex-wrap justify-center gap-3">
               <!-- <button class="p-2 my-5 bg-indigo-700 hover:bg-indigo-800 font-bold text-white rounded border-2 border-transparent hover:border-indigo-800 shadow-md transition duration-500 md:text-xl">
@@ -55,12 +55,12 @@
               
 
 
-              <a :href="route('landlord.apartments.index')">
+              <a :href="route('register')">
                 <button class="p-2 my-5 rounded-lg bg-transparent border-2 bg-indigo-200 bg-opacity-75 hover:bg-opacity-100 border-indigo-700 rounded hover:border-indigo-800 font-bold text-indigo-800 shadow-md transition duration-500 md:text-lg" style="background-color:white;">
                   Landlord
                 </button>
               </a>
-              <a :href="route('landlord.apartments.index')">
+              <a :href="route('register')">
                 <button class="p-2 my-5 rounded-lg bg-transparent border-2 bg-indigo-200 bg-opacity-75 hover:bg-opacity-100 border-indigo-700 rounded hover:border-indigo-800 font-bold text-indigo-800 shadow-md transition duration-500 md:text-lg" style="background-color:white;">
                   Tenant
                 </button>

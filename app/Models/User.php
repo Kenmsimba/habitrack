@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
     ];
 
     /**
@@ -44,5 +45,26 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    // Optional: Scopes
+    public function scopeLandlords($query)
+    {
+        return $query->where('role', 'landlord');
+    }
+
+    public function scopeTenants($query)
+    {
+        return $query->where('role', 'tenant');
+    }
+
+    public function isLandlord(): bool
+    {
+        return $this->role === 'landlord';
+    }
+
+    public function isTenant(): bool
+    {
+        return $this->role === 'tenant';
     }
 }
