@@ -48,9 +48,21 @@
               <!-- <button class="p-2 my-5 bg-indigo-700 hover:bg-indigo-800 font-bold text-white rounded border-2 border-transparent hover:border-indigo-800 shadow-md transition duration-500 md:text-xl">
                 Hire US!
               </button> -->
+              
+                <button class="p-2 my-5 bg-transparent  bg-indigo-200 bg-opacity-75 hover:bg-opacity-100 border-indigo-700 rounded hover:border-indigo-800 font-bold text-indigo-800 transition duration-500 md:text-lg" style="background-color:white;">
+                  Sign Up as :
+                </button>
+              
+
+
               <a :href="route('landlord.apartments.index')">
-                <button class="p-2 my-5 bg-transparent border-2 bg-indigo-200 bg-opacity-75 hover:bg-opacity-100 border-indigo-700 rounded hover:border-indigo-800 font-bold text-indigo-800 shadow-md transition duration-500 md:text-lg" style="background-color:white;">
-                  Sign Up as
+                <button class="p-2 my-5 rounded-lg bg-transparent border-2 bg-indigo-200 bg-opacity-75 hover:bg-opacity-100 border-indigo-700 rounded hover:border-indigo-800 font-bold text-indigo-800 shadow-md transition duration-500 md:text-lg" style="background-color:white;">
+                  Landlord
+                </button>
+              </a>
+              <a :href="route('landlord.apartments.index')">
+                <button class="p-2 my-5 rounded-lg bg-transparent border-2 bg-indigo-200 bg-opacity-75 hover:bg-opacity-100 border-indigo-700 rounded hover:border-indigo-800 font-bold text-indigo-800 shadow-md transition duration-500 md:text-lg" style="background-color:white;">
+                  Tenant
                 </button>
               </a>
               
