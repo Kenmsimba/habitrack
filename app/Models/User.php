@@ -67,4 +67,20 @@ class User extends Authenticatable
     {
         return $this->role === 'tenant';
     }
+
+
+
+
+//     public function isLandlord()
+// {
+//     return $this->role === 'landlord';
+// }
+
+// public function isTenant()
+// {
+//     return $this->role === 'tenant';
+// }
+
+
+
 }

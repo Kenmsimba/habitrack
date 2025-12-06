@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\LoginController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -116,48 +117,67 @@ Route::prefix('landlord')->name('landlord.')->group(function () {
 
 // Tenants 
 
-Route::prefix('tenant')->name('tentant.')->group(function () {
+Route::prefix('tenant')->name('tenant.')->group(function () {
 
-Route::get('/apartments', function () {
-        $units = Unit::select([
-                'id',
-                'property_type',
-                'county',
-                'town',
-                'street',
-                'rent',
-                'size',
-                'bathroom_number',
-                'parking',
-                'wifi',
-                'pets_allowed',
-                'backup_generator',
-                'lift',
-                'is_house_available',
-                'photos',
-                'phone_number'
-            ])
-            ->where('is_house_available', 'Yes') // optional: only show available ones
-            ->latest()
-            ->get();
+    Route::get('/apartments', function () {
+            $units = Unit::select([
+                    'id',
+                    'property_type',
+                    'county',
+                    'town',
+                    'street',
+                    'rent',
+                    'size',
+                    'bathroom_number',
+                    'parking',
+                    'wifi',
+                    'pets_allowed',
+                    'backup_generator',
+                    'lift',
+                    'is_house_available',
+                    'photos',
+                    'phone_number'
+                ])
+                ->where('is_house_available', 'Yes') // optional: only show available ones
+                ->latest()
+                ->get();
 
-        return Inertia::render('Tenant/ListApartments', [
-            'units' => $units
-        ]);
+            return Inertia::render('Tenant/ListApartments', [
+                'units' => $units
+            ]);
     })->name('apartments.index');
 
+    Route::get('/find-home', function () {
+return Inertia::render('Tenant/FilterList');
+})->name('preferences');
     
 });
 
 
 
 // Guests 
-
+// just use 'guest' (Fortify will handle post-login redirect)
 Route::middleware('guest')->group(function () {
-    Route::get('/register', [RegisterController::class, 'create'])->name('register');
+
+    // Register
+    Route::get('/register', [RegisterController::class, 'create'])
+        ->name('register');
     Route::post('/register', [RegisterController::class, 'store']);
-    
-    Route::get('/login', function () {
-        return Inertia::render('Auth/Login');
-    })->name('login');
+
+    // Login
+    Route::get('/login', [LoginController::class, 'create'])
+        ->name('login');
+    Route::post('/login', [LoginController::class, 'store']);
 });
+
+// ──────────────────────────────────────────────────────────────
+// Authenticated users
+// ──────────────────────────────────────────────────────────────
+// Route::middleware('auth')->group(function () {
+//     Route::post('/logout', [\Laravel\Fortify\Http\Controllers\AuthenticatedSessionController::class, 'destroy'])
+//     ->name('logout');
+// });
+
+Route::get('/logout', [\Laravel\Fortify\Http\Controllers\AuthenticatedSessionController::class, 'destroy'])
+    ->name('logout')
+ ->middleware('auth');

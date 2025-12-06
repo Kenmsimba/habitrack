@@ -11,35 +11,21 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
-use Laravel\Fortify\Actions\RedirectIfTwoFactorAuthenticatable;
 use Laravel\Fortify\Fortify;
-
-use Laravel\Fortify\Features;
+use App\Http\Responses\LoginResponse;
 
 class FortifyServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     */
-    public function register(): void
-    {
-        //
-    }
-
-    /**
-     * Bootstrap any application services.
-     */
     public function boot(): void
     {
         Fortify::createUsersUsing(CreateNewUser::class);
         Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
         Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
-        Fortify::redirectUserForTwoFactorAuthenticationUsing(RedirectIfTwoFactorAuthenticatable::class);
 
+        // Rate limiting
         RateLimiter::for('login', function (Request $request) {
-            $throttleKey = Str::transliterate(Str::lower($request->input(Fortify::username())).'|'.$request->ip());
-
+            $throttleKey = Str::transliterate(Str::lower($request->input(Fortify::username())) . '|' . $request->ip());
             return Limit::perMinute(5)->by($throttleKey);
         });
 
@@ -47,15 +33,21 @@ class FortifyServiceProvider extends ServiceProvider
             return Limit::perMinute(5)->by($request->session()->get('login.id'));
         });
 
+        // ───────────────────────────────
+        // THIS IS THE CORRECT WAY
+        // ───────────────────────────────
+        // We use our own Inertia routes → tell Fortify "don't render any view"
+        Fortify::loginView(fn () => null);
+        Fortify::registerView(fn () => null);
 
-        Fortify::registerView(function () {
-            return Inertia::render('Auth/Register');
-        });
+        // Optional: disable other Fortify Blade views too
+        Fortify::requestPasswordResetLinkView(fn () => null);
+        Fortify::resetPasswordView(fn () => null);
 
-        Fortify::loginView(function () {
-            return Inertia::render('Auth/Login');
-        });
-
-        // Optional: other views like forgot password, etc.
+        // Custom redirect after successful login (role-based)
+        $this->app->singleton(
+            \Laravel\Fortify\Contracts\LoginResponse::class,
+            LoginResponse::class
+        );
     }
 }
