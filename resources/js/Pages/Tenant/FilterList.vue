@@ -6,7 +6,7 @@ import Layout from '../Layout.vue';
 <template>
 
 <Layout>
-<div class="max-w-lg w-full">
+<!-- <div class="max-w-lg w-full">
         <div class="text-center mb-10">
             <h1 class="text-3xl font-bold text-gray-900 mb-3">
                 What kind of home are you looking for?
@@ -64,7 +64,7 @@ import Layout from '../Layout.vue';
 
             
         </form>
-    </div>
+    </div> -->
 Find home
 </Layout>
 
